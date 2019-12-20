@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<router-outlet>\n</router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col-sm-12\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row loginBoxHeight\" *ngIf=\"!verifyUserOtp\">\n    <div class=\"col-sm-4\"></div>\n    <div class=\"col-sm-4\">\n      <div class=\"row\">\n        <div class=\"col-sm-2\"></div>\n        <div class=\"col-sm-12 col-md-12 col-lg-8 \">\n          <div class=\"loginbox card\">\n            <div class=\"loginBoxHeading\">\n              Sign into GProject\n            </div>\n            <form #frm=\"ngForm\" (ngSubmit)=\"onSubmit(frm)\" style=\"padding: 0 10px 10px 10px;\">\n               <div class=\"form-group\">\n                <label class=\"field-label\" for=\"email\">Email address *</label>\n                <input type=\"email\" class=\"form-control form-control-sm field-label\" id=\"email\"\n                  aria-describedby=\"emailHelp\" placeholder=\"Enter email\" autocomplete=\"off\" name=\"email\" ngModel required\n                  #userEmail=\"ngModel\" pattern=\"[a-zA-Z0-9_+-]+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]{1,20}$\" />\n              </div>\n              <div *ngIf=\"userEmail.touched && userEmail.errors\" class=\"\">\n                <div class=\"login-error-msg\" *ngIf=\"userEmail.errors?.required\">\n                  Email is required !\n                </div>\n                <div class=\"login-error-msg\" *ngIf=\"userEmail.errors?.pattern\">\n                  Invalid email !\n                </div>\n              </div>\n              <label class=\"field-label\" for=\"password\">Password *</label>\n              <div class=\"form-group input-group\">\n                <input [type]=\"showPassword?'text':'password'\" class=\"form-control form-control-sm field-label\"\n                  id=\"password\" placeholder=\"Password\" autocomplete=\"off\" name=\"password\" ngModel required\n                  #userPassword=\"ngModel\" />\n                <!-- <div class=\"input-group-append\">\n                  <span class=\"input-group-text\" (click)=\"showPassword =!showPassword\">\n                    <i class=\"fa fa-fw  field-icon\" [ngClass]=\"{'fa-eye-slash':!showPassword,'fa-eye':showPassword}\"\n                      aria-hidden=\"true\"></i></span>\n                </div> -->\n              </div>\n              <!-- <div *ngIf=\"iscaps && userPassword!=''\" class=\"login-error-msg\">\n                <span class=\"login-error-msg\">{{iscaps?'CAPSLOCK IS ON':'No CapsLock'}}</span>\n              </div> -->\n              <div *ngIf=\"userPassword.touched && userPassword.errors\" class=\"\">\n                <div class=\"login-error-msg\" *ngIf=\"userPassword.errors?.required\">\n                  Password is required !\n                </div>\n              </div>\n  \n              <div class=\"row\">\n                <div class=\"col-sm-6\" style=\" font-family: Roboto;color: #9b9b9b;\">\n                  <a class=\"routeLink\" (click)=\"forgotPage()\"><u style=\"text-decoration: underline;color: blue;\">Forgot\n                      password?</u></a>\n                </div>\n                <div class=\"col-sm-6 loginBoxTextRight \" *ngIf=\"!serverResponse\">\n                  <button type=\"submit\" [disabled]=\"frm.invalid\" class=\"btn loginBtn\">\n                    Sign In\n                  </button>\n                </div>\n                <div class=\"col-sm-6 loginBoxTextRight\" *ngIf=\"serverResponse\">\n                  <button class=\"btn loginBtn\">\n                    <i class=\"fa fa-circle-o-notch fa-spin\"></i> Sign In\n                  </button>\n                </div>\n              </div>\n            </form>\n          </div>\n        </div>\n        <div class=\"col-sm-2\"></div>\n      </div>\n      <div class=\"loginBoxTextCenter\">\n        <p class=\"field-label\" style=\"font-size:14px;margin-top: 10px; font-family: Roboto;color: #9b9b9b;\">\n          <a class=\"routeLink\" (click)=\"registerPage()\" style=\"text-decoration: underline;\n          color: blue;\">Don't have an account? Sign Up</a>\n        </p>\n      </div>\n    </div>\n  \n    <div class=\"col-sm-4\"></div>\n  </div>\n  \n  \n  <!-- verify user active or not -->\n  <div class=\"row loginBoxHeight\" *ngIf=\"verifyUserOtp\">\n    <div class=\"col-sm-4\"></div>\n    <div class=\"col-sm-4\">\n      <div class=\"row\">\n        <div class=\"col-sm-2\"></div>\n        <div class=\"col-sm-12 col-md-12 col-lg-8 \">\n          <div style=\"text-align: center\">\n            <img src=\"assets/images/color.png\" class=\"img-responsive\" />\n          </div>\n          <div class=\"loginbox card\">\n            <div class=\"loginBoxHeading\">\n              OTP Verification\n            </div>\n            <form  style=\"padding: 0 10px 10px 10px;\">\n              <div class=\"form-group\">\n                <label for=\"otpverification\" style=\"margin-left: 2px;\" class=\"\">Please Enter OTP </label>\n                <input type=\"text\" name=\"otpverification\" id=\"otpverification\"\n                  class=\"form-control form-control-sm field-label\" placeholder=\"Enter your OTP\" autocomplete=\"off\" ngModel\n                  required #userOtpVerification=\"ngModel\" maxlength=\"6\" pattern=\"\"\n                  onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\" />\n              </div>\n              <div *ngIf=\"userOtpVerification.touched && userOtpVerification.errors\" class=\"\">\n                <div class=\"login-error-msg\" *ngIf=\"userOtpVerification.errors?.required\">\n                  Otp is required !\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-sm-12 center-block\" *ngIf=\"!serverResponse1\">\n                  <button type=\"button\" [disabled]=\"frm.invalid\" (click)=\"onSubmitCode(userOtpVerification.value)\" style=\"background-color: #3284C7; \n                  color: #ffffff\" name=\"otpverify\" class=\"btn loginBtn center-block pull-right block\">\n                  Verify</button>\n                </div>\n                <div class=\"col-sm-12 center-block\" *ngIf=\"serverResponse1\">\n                  <button   style=\"background-color: #3284C7; \n                  color: #ffffff\" name=\"otpverify\" class=\"btn loginBtn center-block pull-right block\">\n                    <i class=\"fa fa-circle-o-notch fa-spin\" ></i>Verify</button>\n                </div>\n              </div>\n            </form>\n          </div>\n        </div>\n      </div>\n      <div class=\"loginBoxTextCenter\">\n        <p class=\"field-label\" style=\"font-size:14px;margin-top: 10px; font-family: Roboto;color: #9b9b9b;\">\n          <a class=\"routeLink\" (click)=\"Otpsend()\" style=\"text-decoration: underline;\n          color: blue;cursor: pointer;\">Resend OTP</a>\n        </p>\n      </div>\n    </div>\n  \n    <div class=\"col-sm-4\"></div>\n  </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row loginBoxHeight\" *ngIf=\"!verifyUserOtp\">\n    <div class=\"col-sm-4\"></div>\n    <div class=\"col-sm-4\">\n      <div class=\"row\">\n        <div class=\"col-sm-2\"></div>\n        <div class=\"col-sm-12 col-md-12 col-lg-8 \">\n          <div class=\"loginbox card\">\n            <div class=\"loginBoxHeading\">\n              Sign into GProject\n            </div>\n            <form #frm=\"ngForm\" (ngSubmit)=\"onSubmit(frm)\" style=\"padding: 0 10px 10px 10px;\">\n               <div class=\"form-group\">\n                <label class=\"field-label\" for=\"email\">Email address *</label>\n                <input type=\"email\" class=\"form-control form-control-sm field-label\" id=\"email\"\n                  aria-describedby=\"emailHelp\" placeholder=\"Enter email\" autocomplete=\"off\" name=\"email\" ngModel required\n                  #userEmail=\"ngModel\" pattern=\"[a-zA-Z0-9_+-]+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]{1,20}$\" />\n              </div>\n              <div *ngIf=\"userEmail.touched && userEmail.errors\" class=\"\">\n                <div class=\"login-error-msg\" *ngIf=\"userEmail.errors?.required\">\n                  Email is required !\n                </div>\n                <div class=\"login-error-msg\" *ngIf=\"userEmail.errors?.pattern\">\n                  Invalid email !\n                </div>\n              </div>\n              <label class=\"field-label\" for=\"password\">Password *</label>\n              <div class=\"form-group input-group\">\n                <input [type]=\"showPassword?'text':'password'\" class=\"form-control form-control-sm field-label\"\n                  id=\"password\" placeholder=\"Password\" autocomplete=\"off\" name=\"password\" ngModel required\n                  #userPassword=\"ngModel\" />\n                <!-- <div class=\"input-group-append\">\n                  <span class=\"input-group-text\" (click)=\"showPassword =!showPassword\">\n                    <i class=\"fa fa-fw  field-icon\" [ngClass]=\"{'fa-eye-slash':!showPassword,'fa-eye':showPassword}\"\n                      aria-hidden=\"true\"></i></span>\n                </div> -->\n              </div>\n              <!-- <div *ngIf=\"iscaps && userPassword!=''\" class=\"login-error-msg\">\n                <span class=\"login-error-msg\">{{iscaps?'CAPSLOCK IS ON':'No CapsLock'}}</span>\n              </div> -->\n              <div *ngIf=\"userPassword.touched && userPassword.errors\" class=\"\">\n                <div class=\"login-error-msg\" *ngIf=\"userPassword.errors?.required\">\n                  Password is required !\n                </div>\n              </div>\n  \n              <div class=\"row\">\n                <div class=\"col-sm-6\" style=\" font-family: Roboto;color: #9b9b9b;\">\n                  <a class=\"routeLink\" (click)=\"forgotPage()\"><u style=\"text-decoration: underline;color: blue;\">Forgot\n                      password?</u></a>\n                </div>\n                <div class=\"col-sm-6 loginBoxTextRight \" *ngIf=\"!serverResponse\">\n                  <button type=\"submit\" [disabled]=\"frm.invalid\" class=\"btn loginBtn\">\n                    Sign In\n                  </button>\n                </div>\n                <div class=\"col-sm-6 loginBoxTextRight\" *ngIf=\"serverResponse\">\n                  <button class=\"btn loginBtn\">\n                    <i class=\"fa fa-circle-o-notch fa-spin\"></i> Sign In\n                  </button>\n                </div>\n              </div>\n            </form>\n          </div>\n        </div>\n        <div class=\"col-sm-2\"></div>\n      </div>\n      <div class=\"loginBoxTextCenter\">\n        <p class=\"field-label\" style=\"font-size:14px;margin-top: 10px; font-family: Roboto;color: #9b9b9b;\">\n          <a class=\"routeLink\" (click)=\"registerPage()\" style=\"text-decoration: underline;\n          color: blue;\">Don't have an account? Sign Up</a>\n        </p>\n      </div>\n    </div>\n  \n    <div class=\"col-sm-4\"></div>\n  </div> \n  <!-- verify user active or not -->\n  <div class=\"row loginBoxHeight\" *ngIf=\"verifyUserOtp\">\n    <div class=\"col-sm-4\"></div>\n    <div class=\"col-sm-4\">\n      <div class=\"row\">\n        <div class=\"col-sm-2\"></div>\n        <div class=\"col-sm-12 col-md-12 col-lg-8 \">\n          <div style=\"text-align: center\">\n            <img src=\"assets/images/color.png\" class=\"img-responsive\" />\n          </div>\n          <div class=\"loginbox card\">\n            <div class=\"loginBoxHeading\">\n              OTP Verification\n            </div>\n            <form  style=\"padding: 0 10px 10px 10px;\">\n              <div class=\"form-group\">\n                <label for=\"otpverification\" style=\"margin-left: 2px;\" class=\"\">Please Enter OTP </label>\n                <input type=\"text\" name=\"otpverification\" id=\"otpverification\"\n                  class=\"form-control form-control-sm field-label\" placeholder=\"Enter your OTP\" autocomplete=\"off\" ngModel\n                  required #userOtpVerification=\"ngModel\" maxlength=\"6\" pattern=\"\"\n                  onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\" />\n              </div>\n              <div *ngIf=\"userOtpVerification.touched && userOtpVerification.errors\" class=\"\">\n                <div class=\"login-error-msg\" *ngIf=\"userOtpVerification.errors?.required\">\n                  Otp is required !\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-sm-12 center-block\" *ngIf=\"!serverResponse1\">\n                  <button type=\"button\" [disabled]=\"frm.invalid\" (click)=\"onSubmitCode(userOtpVerification.value)\" style=\"background-color: #3284C7; \n                  color: #ffffff\" name=\"otpverify\" class=\"btn loginBtn center-block pull-right block\">\n                  Verify</button>\n                </div>\n                <div class=\"col-sm-12 center-block\" *ngIf=\"serverResponse1\">\n                  <button   style=\"background-color: #3284C7; \n                  color: #ffffff\" name=\"otpverify\" class=\"btn loginBtn center-block pull-right block\">\n                    <i class=\"fa fa-circle-o-notch fa-spin\" ></i>Verify</button>\n                </div>\n              </div>\n            </form>\n          </div>\n        </div>\n      </div>\n      <div class=\"loginBoxTextCenter\">\n        <p class=\"field-label\" style=\"font-size:14px;margin-top: 10px; font-family: Roboto;color: #9b9b9b;\">\n          <a class=\"routeLink\" (click)=\"Otpsend()\" style=\"text-decoration: underline;\n          color: blue;cursor: pointer;\">Resend OTP</a>\n        </p>\n      </div>\n    </div>  \n    <div class=\"col-sm-4\"></div>\n  </div>\n</div>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n    <div class=\"col-sm-12\" style=\"background: #000;color:#fff\">\n       <div style=\"padding: 10px;\">\n        <span>\n            <b>GProject</b>\n        </span>\n        <span style=\"float:right;\" (click)=\"logOutUserSession()\">\n            <b>LogOut</b>\n        </span>\n       </div>\n    </div>\n</div>\n<div class=\"row mt-3\">\n  <div class=\"col-sm-10 offset-1\">\n      <button class=\"btn\">Frontier</button>\n      <button class=\"btn\">Events</button>\n      <button class=\"btn\">Influence</button>\n      <button class=\"btn\">Patent</button>\n      <button class=\"btn\">NeuroExpert</button>\n  </div>\n</div>\n\n<div class=\"row mt-5\" style=\"overflow-x: none;\">\n    <div class=\"col-sm-10 offset-1 p-3\">\n        <table class=\"table table-striped \">\n        <thead>\n            <tr>\n                <th>\n                    Id\n                </th>\n                <th>\n                    Title\n                </th>\n                <th>\n                   Source\n                </th>\n                <th>\n                   Author\n                 </th>\n                 <th>\n                    Image\n                 </th>\n                 <th>\n                    Organisation\n                 </th>\n                 <th>\n                    Action\n                 </th>\n             </tr>\n        </thead>\n        <tr *ngFor=\"let item of tableData;let i = index;\">\n            <td>\n                {{i}}\n            </td>\n            <td>\n                {{item.title}}\n            </td>\n            <td>\n                {{item.source}}\n            </td>\n            <td>\n                {{item.author}}\n            </td>\n            <td>\n                {{item.image}}\n            </td>\n            <td>\n                {{item.organisation}}\n            </td>\n            <td>\n                No Action\n            </td>\n        </tr>\n        </table>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n    <div class=\"col-sm-12\" style=\"background: #000;color:#fff\">\n       <div style=\"padding: 10px;\">\n        <span>\n            <b>GProject</b>\n        </span>\n        <span style=\"float:right;\" (click)=\"logOutUserSession()\">\n            <b>LogOut</b>\n        </span>\n       </div>\n    </div>\n</div>\n<div class=\"row mt-3\">   \n  <div class=\"col-sm-10 offset-1\">\n     <div class=\"row\">\n        <div class=\"col\" >\n            <div class=\"p-5 card\">\n                Frontier\n            </div>\n            </div>\n            <div class=\"col\" >\n            <div class=\"p-5 card\">\n                Events\n            </div>\n        </div>\n        <div class=\"col\" >\n            <div class=\"p-5 card\">\n                Influence\n            </div>\n        </div>\n        <div class=\"col\" >\n            <div class=\"p-5  card\">\n                Patent\n            </div>\n        </div>\n        <div class=\"col \" >\n            <div class=\"pt-5 pl-4 pr-4 pb-5 card\">\n                NeuroExpert\n            </div>\n        </div>\n     </div>\n  </div>\n</div>\n<div class=\"row mt-5\">\n    <div class=\"col-sm-10 offset-1\">\n       <h4>Frontier</h4>\n    </div>\n</div>\n\n<div class=\"row mt-1\" style=\"overflow-x: none;\">\n    <div class=\"col-sm-10 offset-1 p-3 \">\n        <table class=\"table table-striped\">\n        <thead>\n            <tr>\n                <th style=\"width: 5%\">\n                    Id\n                </th>\n                <th style=\"width: 25%\">\n                    Title\n                </th>\n                <th style=\"width: 15%\">\n                   Source\n                </th>\n                <th style=\"width: 10%\">\n                   Author\n                 </th>\n                 <th style=\"width: 15%\">\n                    Image\n                 </th>\n                 <th style=\"width: 10%\">\n                    Organisation\n                 </th>\n                 <th style=\"width: 20%\">\n                    Action\n                 </th>\n             </tr>\n        </thead>\n        <tr *ngFor=\"let item of tableData;let i = index;\">\n            <td>\n                {{i}}\n            </td>\n            <td>\n                {{item.title}}\n            </td>\n            <td>\n                {{item.source}}\n            </td>\n            <td>\n                {{item.author}}\n            </td>\n            <td>\n                {{item.image}}\n            </td>\n            <td>\n                {{item.organisation}}\n            </td>\n            <td>\n                <span style=\"border: 1px solid;padding: 3px 15px;margin: 0 3px;cursor: pointer;\" (click)=\"editPost(item)\">\n                    Edit \n                </span>\n                <span style=\"border: 1px solid;padding: 3px 10px;margin: 0 3px;\">\n                    Delete \n                </span>\n            </td>\n        </tr>\n        </table>\n    </div>\n</div>\n\n<div class=\"modal\" id=\"editModal\" *ngIf=\"editPostDetails\">\n    <div class=\"modal-dialog modal-md\">\n        <div class=\"modal-content\">    \n        <!-- Modal Header -->\n        <div class=\"modal-header\">\n            <h4 class=\"modal-title\">Edit Details</h4>\n        </div>    \n        <!-- Modal body -->\n        <div class=\"modal-body\">\n            <form>\n                <div class=\"form-group\">\n                    <label for=\"title\">Title:</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter title\" name=\"title\" [(ngModel)]=\"editPostDetails.title\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"source\">Source:</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter source\" name=\"source\" [(ngModel)]=\"editPostDetails.source\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"Author\">Author:</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Author\" name=\"Author\" [(ngModel)]=\"editPostDetails.author\">\n                </div>  \n                <div class=\"form-group\">\n                        <label for=\"Organisation\">Organisation:</label>\n                        <input type=\"text\" class=\"form-control\" placeholder=\"Enter Organisation\" name=\"Organisation\" [(ngModel)]=\"editPostDetails.organisation\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"body\">Post Details:</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter post details\" name=\"body\" [(ngModel)]=\"editPostDetails.body\">\n                </div>               \n                <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n            </form>\n        </div>    \n        <!-- Modal footer -->\n        <div class=\"modal-footer\">\n            <a  class=\"btn btn-default\" data-dismiss=\"modal\">Close</a>\n        </div>\n    \n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -553,6 +553,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _user_dashboard_user_dashboard_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user-dashboard/user-dashboard.component */ "./src/app/dashboard/user-dashboard/user-dashboard.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
 
 
 
@@ -563,7 +565,8 @@ DashboardModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_user_dashboard_user_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["UserDashboardComponent"]],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
         ]
     })
 ], DashboardModule);
@@ -610,78 +613,89 @@ let UserDashboardComponent = class UserDashboardComponent {
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
+                organisation: "oracle",
+                body: "Edit body"
             },
             {
                 title: "C language",
                 source: "c publication",
                 author: "Denis",
                 image: "No image url",
-                organisation: "oracle"
-            },
+                organisation: "oracle",
+                body: "Edit body"
+            }
         ];
     }
     ngOnInit() {
@@ -689,6 +703,12 @@ let UserDashboardComponent = class UserDashboardComponent {
     logOutUserSession() {
         localStorage.removeItem('UserDetails');
         this.router.navigate(['\login']);
+    }
+    editPost(item) {
+        // alert('Hi');
+        this.editPostDetails = item;
+        console.log(this.editPostDetails);
+        $('#editModal').modal('show');
     }
 };
 UserDashboardComponent.ctorParameters = () => [
