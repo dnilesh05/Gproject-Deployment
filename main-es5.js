@@ -375,7 +375,7 @@
                             'Access-Control-Allow-Origin': '*'
                         })
                     };
-                    return this.httpClient.get("http://18.188.209.196:8284/scrapped-articles");
+                    return this.httpClient.get("https://18.188.209.196:8284/scrapped-articles");
                 };
                 return DashboardService;
             }());
